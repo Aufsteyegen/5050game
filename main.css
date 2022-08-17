@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:ital,wght@0,400;0,600;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
+body, input {
+  background: #f1faff;
+  margin: 0;
+  font-family: "IBM Plex Sans Condensed";
+  color: rgb(0, 0, 0);
+}
+
+h1, h2, h3 {
+  font-family: "IBM Plex Mono";
+}
+
+.navbar {
+  background: rgb(219, 232, 231);
+  padding: 0.1em;
+  margin: 0;
+}
+.navbar .wordmark {
+  text-decoration: none;
+  font-family: "Silkscreen";
+  font-weight: bold;
+}
+
+.modal-container {
+  box-sizing: border-box;
+  display: none;
+}/*# sourceMappingURL=main.css.map */

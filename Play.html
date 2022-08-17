@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>3143</title>
+        <meta name="keywords" content="game,us,usstates,counties,learning,geography,quiz,geographyquiz,parishes,boroughs">
+        <meta name="description" content="Challenge your U.S. geography knowledge.">
+        <link rel="stylesheet" href="CSS/main.css">
+    </head>
+    <style>
+        h1 {text-align: center;}
+        h3 {text-align: center;}
+    </style>
+    <body>
+        <div class="navbar">
+            <div class="container">
+                <nav>
+                    <ul class="primary-nav">
+
+                        <li><button id="open">
+                            ❓
+                        </button></li>
+                        <div class="modal-container" id="modal_container">
+                            <div class="modal">
+                                <h2>About</h2>
+                                <p>
+                                    <a href="https://en.wikipedia.org/wiki/List_of_United_States_counties_and_county_equivalents">3143.</a> 
+                                    That's how many counties exist in the United States
+                                    + D.C.
+                                </p>
+                                <p>
+                                    Here's the game: Every day, there is a mystery U.S. state and county (equivalent to "parishes" in 
+                                    Louisiana and "boroughs" in Alaska) within that state. Guess the state, 
+                                    then guess the county/parish/borough—both in as few guesses as possible.
+                                </p>
+                                <p>
+                                    First, each state you guess will appear on a map of the U.S. Its color indicates
+                                    how close it is to the answer; the <b style="color:red";>hotter</b> the color,
+                                    the closer you are. A <b style="color:green";>green</b> outline means you've
+                                    guessed correctly! This process repeats at the state-wide level for counties/parishes/boroughs.
+                                </p>
+                                <button id="close">❌</button>  
+                            </div>
+                        </div>
+
+                        <li><a class="wordmark" href="Play.html">3143</a></li>
+
+                        <li><button id="open">
+                            📊
+                        </button></li>
+                        <div class="modal-container" id="modal_container">
+                            <div class="modal">
+                                <h2>Your stats</h2>
+                                <p>
+                                    [Stats go here]
+                                </p>
+                                <button id="close">❌</button>  
+                            </div>
+                        </div>
+
+                        <li><button id="FAQ">
+                            FAQ
+                        </button></li>
+                        <div class="modal-container" id="modal_container">
+                            <div class="modal">
+                                <h2>FAQ</h2>
+                                <p>
+                                [FAQ goes here]
+                                </p>
+                                <button id="close">❌</button>  
+                            </div>
+                        </div>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <section class="hero">
+            <div class="container">
+                <div class="upper-row">
+                    <p class="subhead">Inspired by: <a href="https://globle-game.com/game">Globle</a></p>
+                </div>
+                <div class="lower-row">
+                    <form action="results.html">
+                        <input type="text" placeholder="Enter state name here"></form><button>Guess it!</button>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="footer">
+            <div class="container">
+                <ul>
+                    <li>
+                    <a href="https://github.com/Aufsteyegen">
+                    <img src="gitlogo.png" alt="Aufsteyegen's GitHub" width="20" height="20"> 
+                    </a></li>
+                </ul>
+            </div>
+        </section>
+    </body>
+</html>
