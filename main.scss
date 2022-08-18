@@ -8,14 +8,93 @@ body, input {
     font-family: 'IBM Plex Sans Condensed';
     color: rgb(0, 0, 0);
 }
-h1, h2, h3 {
+h1, h2, h3, button {
     font-family: 'IBM Plex Mono';
 }
 
-.navbar {
-    background: rgb(219, 232, 231);
-    padding: 0.1em;
+.primary-nav button {
+    background: transparent;
+    border: none;
     margin: 0;
+    width: 50px;
+    height: 25px;
+    font-size: 1.5em;
+}
+
+P { 
+    text-align: center;
+    align-items: center;
+}
+
+.wordmark {
+    text-align: center;
+    align-items: center;
+    font-size: 5em;
+    padding-bottom: 0%;
+}
+
+.container {
+    text-align: center;
+    align-items: center;
+}
+
+.lower-row {
+    display: inline-block;
+}
+
+button {border-radius: 2.5px}
+
+.hero {
+
+    .upper-row {
+        font-style: italic;
+    }
+    
+    #guessit {
+        height: 35.83px; width: 120px;
+        font-size: 1em;
+        font-size: 1em;
+        outline: none;
+        border-color:rgb(0, 191, 255);
+        animation-name: buttonan1;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        color: white;
+        animation-direction: alternate;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+    #guessinp {
+        height: 30px; width: 150px;
+        font-size: 1em;
+        background: white;
+        outline: transparent;
+        border-radius: 2.5px;
+        border-color: black;
+    }
+}
+
+#guessinp[type=text]:focus {
+    background-color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+#guessit:hover {
+    color: black;
+}
+
+
+ul {list-style-type: none;}
+
+@keyframes buttonan1 {
+    from {background-color: rgb(0, 115, 255);}
+    to {background-color: rgb(0, 185, 226);}
+}
+
+
+.navbar {
+    background: none;
     
     .wordmark {
         text-decoration: none;
@@ -25,7 +104,9 @@ h1, h2, h3 {
 
 }
 
+
 .modal-container {
     box-sizing: border-box;
     display: none;
 }
+
