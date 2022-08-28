@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>3 1 4 3</title>
+        <meta name="keywords" content="game,us,usstates,counties,learning,geography,quiz,geographyquiz,parishes,boroughs">
+        <meta name="description" content="Challenge your U.S. geography knowledge.">
+        <link rel="stylesheet" href="./CSS/main.css">
+        <link rel="icon" type="image" href="./src/assets/favicon.ico">
+    </head>
+   
+    <body>
+        <div class="navbar">
+            <div class="container">
+                <nav>
+
+                    <div class="upperhold">
+                        <div class="upperholdcontent1"><button id="upperqb">
+                            <canvas class="webgl" id="upperq">
+                            <script type="module" src="./src/index.js"></script>
+                        </canvas>
+                    </button></div>
+
+                        <div class="upperholdcontent"><h1><a class="wordmark" href="index.html">3 1 4 3</a></h1></div>
+                    </div>
+
+                    <hr id="tophr">
+
+                    <ul class="primary-nav">
+
+                        <div class="modal-container" id="modal_container">
+                            <div class="modal">
+                                <h2>About</h2>
+                                <p>
+                                    <a href="https://en.wikipedia.org/wiki/List_of_United_States_counties_and_county_equivalents">3143.</a> 
+                                    That's how many counties exist in the United States
+                                    + D.C.
+                                </p>
+                                <p>
+                                    Here's the game: Every day, there is a mystery U.S. state and county (equivalent to "parishes" in 
+                                    Louisiana and "boroughs" in Alaska) within that state. Guess the state, 
+                                    then guess the county/parish/borough—both in as few guesses as possible.
+                                </p>
+                                <p>
+                                    First, each state you guess will appear on a map of the U.S. Its color indicates
+                                    how close it is to the answer; the <b style="color:red";>hotter</b> the color,
+                                    the closer you are. A <b style="color:green";>green</b> outline means you've
+                                    guessed correctly! This process repeats at the state-wide level for counties/parishes/boroughs.
+                                </p>
+                                <button id="close">❌</button>  
+                            </div>
+                        </div>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <section class="hero">
+            <div class="container">
+                <div id="flexwrapper"> 
+                <div class="container" id="maincont">
+                   
+                    <form id="inputitems">
+                        <div id="inputform1"><label id="guesslabel">Your guess:</label>
+                        <input id="guessinp" type="text" autocomplete="off" autofocus>
+                        <span style="display:inline-block;" class="border"></span></div>
+
+                        <div id="guessitflex">
+                            <button class="pushable" id="guessit">
+                                <span class="shadow"></span>
+                                <span class="edge"></span>
+                                <span class="front">
+                                    <b>Guess it!</b>
+                                </span>
+                            </button></form>
+                        
+                        </div>
+                    
+                    </div>
+
+                    <div id="belowinp1"><hr id="belowinp2"></div>
+                </div>
+                
+                <div class="lower-row">
+                    <div class="child inline-block-child">
+                    <p>Enter the name of any U.S. state to play.</p></div>
+                    </div>
+                </div>
+
+                <div class="container2">
+                    <canvas class="webgl" id="mainc">
+                        <script type="module" src="./src/index.js"></script>
+                    </canvas>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="footer">
+            <div class="container">
+                    <p class="subhead"><a href="https://github.com/Aufsteyegen">
+                        <img src="./src/assets/gitlogo.png" alt="Aufsteyegen's GitHub" id="gith"></a> 
+                     | Inspired by:
+                     <a href="https://globle-game.com/game" id="globlel">
+                    <img src="./src/assets/apple-touch-icon.png" id="globle"></a>
+                    
+                    </a></p>
+                </ul>
+            </div>
+        </section>
+    </body>
+</html>

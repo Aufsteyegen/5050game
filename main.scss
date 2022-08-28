@@ -2,24 +2,70 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:ital,wght@0,400;0,600;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 
-body, input {
-    background: #f1faff;
+body, input, button {
+    background: #e2f6ff;
     margin: 0;
     font-family: 'IBM Plex Sans Condensed';
     color: rgb(0, 0, 0);
 }
-h1, h2, h3, button {
+h1, h2, h3 {
     font-family: 'IBM Plex Mono';
+    margin: 0;
 }
 
-.primary-nav button {
-    background: transparent;
-    border: none;
-    margin: 0;
-    width: 50px;
-    height: 25px;
-    font-size: 1.5em;
+#upperq {
+    background: none;
 }
+
+#globle {
+    height: 1.3em;
+    width: 1.3em;
+    vertical-align: middle;
+}
+
+.subhead {
+    margin: 0.1em;
+}
+
+.nav {
+    
+    width: 60%;
+}
+
+.upperhold {
+    display: flex;
+    width: 60%;
+    align-items: center;
+    margin: auto;
+    button {
+            width: 5em;
+            height: 5em;
+    }
+        canvas {
+            width: 5em;
+            height: 5em;
+    }
+}
+
+.upperholdcontent {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    font-size: 0.5em;
+}
+
+.upperholdcontent1 {
+    width: 2em;
+    display: inline-block;
+}
+
+#tophr {
+    width: 60%;
+    border: 1px solid rgb(0, 115, 255);
+    display: inline-block;
+    margin: 0.3em;
+}
+
 
 P { 
     text-align: center;
@@ -31,82 +77,242 @@ P {
     align-items: center;
     font-size: 5em;
     padding-bottom: 0%;
+    color:rgb(0, 115, 255);
 }
 
 .container {
     text-align: center;
+    
+}
+
+.container2 {
+    text-align: center;
     align-items: center;
+    background:rgb(0, 0, 0);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    height: 30em;
 }
 
-.lower-row {
-    display: inline-block;
+
+#mainc {
+    width: 100%;
+    height: 30em;
 }
 
-button {border-radius: 2.5px}
+#maincont {
+    vertical-align: middle;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+/* This button adapted from: https://www.joshwcomeau.com/animation/3d-button/ */
+
+.pushable {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    
+  }
+  .shadow {
+    position: absolute;
+    filter: blur(3px);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition:
+      transform
+      600ms
+      cubic-bezier(.3, .7, .4, 1);
+  }
+  .edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: linear-gradient(
+      to left,
+      rgb(0, 81, 255) 0%,
+      rgb(178, 226, 255) 5%,
+      rgb(195, 224, 255) 95%,
+      rgb(0, 81, 255) 100%
+    );
+  }
+  .front {
+    display: block;
+    position: relative;
+    padding: 5.2px 18px;
+    border-radius: 8px;
+    font-size: 1.8em;
+    text-shadow: 0.3px 0.3px 1.5px #000000;
+    color: white;
+    background: rgb(0, 115, 255);
+    will-change: transform;
+    transform: translateY(-4px);
+    transition:
+      transform
+      600ms
+      cubic-bezier(.3, .7, .4, 1);
+  }
+  .pushable:hover {
+    filter: brightness(110%);
+  }
+  .pushable:hover .front {
+    transform: translateY(-6px);
+    transition:
+      transform
+      250ms
+      cubic-bezier(.3, .7, .4, 1.5);
+  }
+  .pushable:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+  }
+  .pushable:hover .shadow {
+    transform: translateY(4px);
+    transition:
+      transform
+      250ms
+      cubic-bezier(.3, .7, .4, 1.5);
+  }
+  .pushable:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+  }
+  .pushable:focus:not(:focus-visible) {
+    outline: none;
+}
+
+#flexwrapper {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#belowinp1 {
+    width: 18em;
+    display: inline-flex;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#belowinp2 {
+    margin: 0;
+    border-right: 12em;
+    width: 3em;
+    border-color: rgb(0, 115, 255);
+    border-top:rgb(0, 115, 255);
+}
 
 .hero {
 
-    .upper-row {
-        font-style: italic;
-    }
-    
-    #guessit {
-        height: 35.83px; width: 120px;
-        font-size: 1em;
-        font-size: 1em;
-        outline: none;
-        border-color:rgb(0, 191, 255);
-        animation-name: buttonan1;
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
-        color: white;
-        animation-direction: alternate;
-        cursor: pointer;
-        margin: 5px;
-    }
-
     #guessinp {
-        height: 30px; width: 150px;
-        font-size: 1em;
-        background: white;
-        outline: transparent;
-        border-radius: 2.5px;
-        border-color: black;
+        height: 40px; width: 160px;
+        font-size: 1.8em;
+        background:rgb(255, 255, 255);
+        border-style: solid;
+        border-width: 1px;
+        caret-color: rgb(0, 115, 255);
+        border-color:rgb(0, 0, 0);
+        margin-top: 0.2em;
+        margin-right: 0.2em;
+        font-weight: bold;
+        color:rgb(0, 115, 255);
     }
 }
 
-#guessinp[type=text]:focus {
-    background-color: rgb(255, 255, 255);
-    font-weight: bold;
+:focus {
+    outline: none;
 }
 
-#guessit:hover {
-    color: black;
+#guessitflex {
+    display: inline-flex;
+    margin-top: auto;
 }
 
+#inputform1 {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+#inputitems {
+    display: flex;
+}
+
+#guesslabel {
+    text-align: left;
+}
+
+.mainc {
+    vertical-align: middle;
+}
 
 ul {list-style-type: none;}
-
-@keyframes buttonan1 {
-    from {background-color: rgb(0, 115, 255);}
-    to {background-color: rgb(0, 185, 226);}
-}
-
 
 .navbar {
     background: none;
     
     .wordmark {
         text-decoration: none;
-        font-family: 'Silkscreen';
+        font-family: 'IBM Plex Mono';
         font-weight: bold;
     }
 
 }
 
-
 .modal-container {
     box-sizing: border-box;
     display: none;
+}
+
+#upperqb {
+    background: transparent;
+}
+
+#upperq {
+    width: 100%;
+    height: 100%;
+}
+
+.footer {
+    margin: 0.7em;
+    vertical-align: middle;
+}
+
+#gith {
+    height: 1.3em;
+    width: 1.3em;
+    vertical-align: middle;
+}
+
+input {
+    border-radius: 8px;
+}
+
+input:focus { 
+    outline: none !important;
+    box-shadow: 0.3px 2.3px 2.5px 0.3px rgb(0, 115, 255);
+    transition: 0.3s;
+}
+
+input:hover { 
+    outline: none !important;
+    box-shadow: 0.3px 0.3px 2.5px 0.3px rgb(0, 115, 255);
+    transition: 0.3s;
 }
 
