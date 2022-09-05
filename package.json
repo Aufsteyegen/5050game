@@ -9,9 +9,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@react-three/drei": "^9.25.3",
+    "@react-three/fiber": "^8.6.2",
     "dat.gui": "^0.7.9",
+    "gltfjsx": "^5.0.2",
     "parcel": "^2.7.0",
-    "parcel-plugin-asset-copier": "^1.1.1"
+    "parcel-plugin-asset-copier": "^1.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-three-scissor": "^1.0.2",
+    "three": "^0.144.0"
   },
   "assetsPath": "./src/assets",
   "devDependencies": {

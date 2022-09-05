@@ -10,70 +10,68 @@
         <link rel="stylesheet" href="./CSS/main.css">
         <link rel="icon" type="image" href="./src/assets/favicon.ico">
     </head>
-   
     <body>
+        <section class="header">
         <div class="navbar">
-            <div class="container">
                 <nav>
-
                     <div class="upperhold">
-                        <div class="upperholdcontent1"><button id="upperqb">
-                            <canvas class="webgl" id="upperq">
-                            <script type="module" src="./src/index.js"></script>
-                        </canvas>
-                    </button></div>
-
-                        <div class="upperholdcontent"><h1><a class="wordmark" href="index.html">3 1 4 3</a></h1></div>
-                    </div>
-
-                    <hr id="tophr">
-
-                    <ul class="primary-nav">
-
-                        <div class="modal-container" id="modal_container">
-                            <div class="modal">
-                                <h2>About</h2>
-                                <p>
-                                    <a href="https://en.wikipedia.org/wiki/List_of_United_States_counties_and_county_equivalents">3143.</a> 
-                                    That's how many counties exist in the United States
-                                    + D.C.
-                                </p>
-                                <p>
-                                    Here's the game: Every day, there is a mystery U.S. state and county (equivalent to "parishes" in 
-                                    Louisiana and "boroughs" in Alaska) within that state. Guess the state, 
-                                    then guess the county/parish/borough—both in as few guesses as possible.
-                                </p>
-                                <p>
-                                    First, each state you guess will appear on a map of the U.S. Its color indicates
-                                    how close it is to the answer; the <b style="color:red";>hotter</b> the color,
-                                    the closer you are. A <b style="color:green";>green</b> outline means you've
-                                    guessed correctly! This process repeats at the state-wide level for counties/parishes/boroughs.
-                                </p>
-                                <button id="close">❌</button>  
+                        <div class="upperholdcontent1"><h1><a class="wordmark" href="index.html" title="3143 game (refresh)">3 1 4 3</a></h1></div>
+                        <div class="upperholdbuttons">
+                            <div class="upperholdcontent2"><button id="statsb" title="Player stats">
+                            </button></div>
+                            <div class="upperholdcontent3">
+                                <button id="upperqb" title="How to play">
+                                    <span id="playing"></span>
+                                </button>
                             </div>
                         </div>
-
-                    </ul>
+                    </div>
+                <hr id="tophr">
+                <div class="modal-container" id="modal_container">
+                    <div class="modal">
+                        <h2>About</h2>
+                        <p>
+                        <a href="https://en.wikipedia.org/wiki/List_of_United_States_counties_and_county_equivalents">3143.</a> 
+                        That's how many counties exist in the United States
+                        + D.C.
+                        </p>
+                        <p>
+                        Here's the game: Every day, there is a mystery county (equivalent to "parishes" in 
+                        Louisiana and "boroughs" in Alaska) within each U.S. state. Input the name of any state, 
+                        then guess the mystery county/parish/borough in as few guesses as possible.
+                        </p>
+                        <p>
+                        First, each state you guess will appear on a map of the U.S. Its color indicates
+                        how close it is to the answer; the <b style="color:red";>hotter</b> the color,
+                        the closer you are. A <b style="color:green";>green</b> outline means you've
+                        guessed correctly! This process repeats at the state-wide level for counties/parishes/boroughs.
+                        </p>
+                        <p>
+                        The number of times you can play each day is determined by your streak.
+                        </p>
+                         <button id="close">❌</button>  
+                        </div>
+                    </div>
                 </nav>
             </div>
         </div>
-
+        </section>
         <section class="hero">
-            <div class="container">
                 <div id="flexwrapper"> 
-                <div class="container" id="maincont">
-                   
+                <div id="maincont">
                     <form id="inputitems">
-                        <div id="inputform1"><label id="guesslabel">Your guess:</label>
-                        <input id="guessinp" type="text" autocomplete="off" autofocus>
+                        <div id="inputform1"><label id="guesslabel">Name of state:</label>
+                        <input id="guessinp" type="text" autocomplete="off" autofocus title="Input box">
                         <span style="display:inline-block;" class="border"></span></div>
 
                         <div id="guessitflex">
-                            <button class="pushable" id="guessit">
+                            <button class="pushable" id="guessit" title="Play button">
                                 <span class="shadow"></span>
                                 <span class="edge"></span>
                                 <span class="front">
-                                    <b>Guess it!</b>
+                                    <span>
+                                        <div class="triangle">▶</div>
+                                    </span>
                                 </span>
                             </button>
                     </form>
@@ -82,35 +80,22 @@
                     
                     </div>
 
-                    <div id="status"><p><b>Status:</b> awaiting your input...</p></div>
-                </div>
-                
-                <div class="lower-row">
-                    <div id="below-status">
-                    <p>Enter the name of any <b>U.S. state</b> to play.</p></div>
-                    </div>
+                    <div><p id="status">Name any <b id="stage" title="Stage">U.S. state</b> to begin.</p></div>
                 </div>
 
-                <div class="container2">
-                    <canvas class="webgl" id="mainc">
-                        <script type="module" src="./src/index.js"></script>
-                    </canvas>
-                </div>
-
-            </div>
         </section>
-
         <section class="footer">
-            <div class="container">
-                    <p class="subhead"><a href="https://github.com/Aufsteyegen">
-                        <img src="./src/assets/gitlogo.png" alt="Aufsteyegen's GitHub" id="gith"></a> 
-                     | Inspired by:
+            <div class="container1">
+                    <p class="subhead"><a href="https://github.com/Aufsteyegen" id="gith2">
+                        <img src="./src/assets/gitlogo.png" alt="Aufsteyegen's GitHub" id="gith" title="My Github"></a> 
+                     <b>|</b> Inspired by:
                      <a href="https://globle-game.com/game" id="globlel">
-                    <img src="./src/assets/apple-touch-icon.png" id="globle"></a>
+                    <img src="./src/assets/apple-touch-icon.png" id="globle" title="Inspired by the game Globle"></a>
                     
                     </a></p>
                 </ul>
             </div>
         </section>
+    <script src="./src/index.js" type="module"></script>
     </body>
 </html>

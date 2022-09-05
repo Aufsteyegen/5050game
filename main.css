@@ -13,56 +13,94 @@ h1, h2, h3 {
   margin: 0;
 }
 
-#upperq {
-  background: none;
+#status {
+  cursor: default;
+}
+
+.footer p {
+  cursor: default;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 8px;
+  border-color: rgba(0, 0, 0, 0.093);
 }
 
 #globle {
   height: 1.3em;
   width: 1.3em;
   vertical-align: middle;
+  margin: auto;
+}
+
+.header {
+  width: 100%;
+  display: inline-flexbox;
+  background-color: rgba(167, 208, 255, 0.424);
 }
 
 .subhead {
   margin: 0.1em;
 }
 
-.nav {
-  width: 60%;
-}
-
 .upperhold {
   display: flex;
-  width: 60%;
-  align-items: center;
+  width: 100%;
+  text-align: left;
   margin: auto;
+  margin-left: 0;
 }
 .upperhold button {
-  width: 5em;
-  height: 5em;
-}
-.upperhold canvas {
-  width: 5em;
-  height: 5em;
-}
-
-.upperholdcontent {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0;
-  font-size: 0.5em;
+  width: 100%;
+  height: 100%;
 }
 
 .upperholdcontent1 {
-  width: 2em;
-  display: inline-block;
+  font-size: 0.5em;
+  display: inline-flexbox;
+}
+
+.upperholdcontent2 {
+  margin-left: auto;
+  margin-top: auto;
+  margin-right: 0.5em;
+  margin-bottom: auto;
+  display: inline-flexbox;
+}
+
+.upperholdcontent3 {
+  margin-right: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#statsb {
+  background: none;
+  transition: box-shadow 0.3s;
+  height: 2.9em;
+  width: 2.9em;
+}
+
+#upperqb {
+  background: none;
+  transition: box-shadow 0.3s;
+  height: 2.9em;
+  width: 2.9em;
+}
+
+#stats {
+  width: 90%;
+  height: 90%;
+  vertical-align: middle;
 }
 
 #tophr {
-  width: 60%;
+  width: 100%;
   border: 1px solid rgb(0, 115, 255);
-  display: inline-block;
   margin: 0.3em;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 P {
@@ -78,7 +116,7 @@ P {
   color: rgb(0, 115, 255);
 }
 
-.container {
+.container1 {
   text-align: center;
 }
 
@@ -147,7 +185,6 @@ P {
   padding: 5.2px 18px;
   border-radius: 8px;
   font-size: 1.8em;
-  text-shadow: 0.3px 0.3px 1.5px #000000;
   color: white;
   background: rgb(0, 115, 255);
   will-change: transform;
@@ -162,6 +199,7 @@ P {
 .pushable:hover .front {
   transform: translateY(-6px);
   transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  background: rgb(33, 200, 0);
 }
 
 .pushable:active .front {
@@ -189,11 +227,21 @@ P {
   margin-right: auto;
 }
 
-#belowinp1 {
-  width: 18em;
-  display: inline-flex;
-  margin-left: 0;
-  margin-right: 0;
+#status {
+  margin-bottom: 0.9em;
+  margin-top: 0.3em;
+  color: rgb(86, 86, 86);
+}
+#status p {
+  margin: 0.3em;
+}
+
+#below-status {
+  margin: 0em;
+}
+#below-status p {
+  margin: 0.7em;
+  margin-top: 0em;
 }
 
 #belowinp2 {
@@ -209,18 +257,19 @@ P {
   width: 160px;
   font-size: 1.8em;
   background: rgb(255, 255, 255);
-  border-style: solid;
-  border-width: 1px;
   caret-color: rgb(0, 115, 255);
-  border-color: rgb(0, 0, 0);
+  border-color: rgba(0, 0, 0, 0.093);
   margin-top: 0.2em;
   margin-right: 0.2em;
   font-weight: bold;
   color: rgb(0, 115, 255);
+  transition: box-shadow 0.3s;
 }
 
-:focus {
-  outline: none;
+#stage {
+  -webkit-text-decoration: underline #000 dotted;
+          text-decoration: underline #000 dotted;
+  cursor: help;
 }
 
 #guessitflex {
@@ -251,6 +300,11 @@ ul {
 
 .navbar {
   background: none;
+  justify-content: center;
+  display: inline-flexbox;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .navbar .wordmark {
   text-decoration: none;
@@ -263,13 +317,26 @@ ul {
   display: none;
 }
 
-#upperqb {
-  background: transparent;
+.upperqb {
+  background: none;
+  transition: box-shadow 0.3s;
+  height: 2.9em;
+  width: 2.9em;
+  cursor: pointer;
+  border-radius: 8px;
+  border-color: rgba(0, 0, 0, 0.093);
 }
 
 #upperq {
+  position: absolute;
+  z-index: -1;
   width: 100%;
   height: 100%;
+}
+
+.upperholdbuttons {
+  display: flex;
+  margin-left: auto;
 }
 
 .footer {
@@ -281,6 +348,7 @@ ul {
   height: 1.3em;
   width: 1.3em;
   vertical-align: middle;
+  margin: auto;
 }
 
 input {
@@ -294,7 +362,17 @@ input:focus {
 }
 
 input:hover {
-  outline: none !important;
   box-shadow: 0.3px 0.3px 2.5px 0.3px rgb(0, 115, 255);
-  transition: 0.3s;
+}
+
+input:active {
+  box-shadow: 0.3px 0.3px 2.5px 0.3px rgb(37, 224, 0);
+}
+
+#upperqb:hover, #statsb:hover {
+  box-shadow: 0.3px 0.3px 2.5px 0.3px rgb(0, 115, 255);
+}
+
+#upperqb:active, #statsb:active {
+  box-shadow: 0.3px 0.3px 2.5px 0.3px rgb(37, 224, 0);
 }/*# sourceMappingURL=main.css.map */
