@@ -1,0 +1,23 @@
+<div class="modal">
+                        <h2>About</h2>
+                        <p>
+                        <a href="https://en.wikipedia.org/wiki/List_of_United_States_counties_and_county_equivalents">3143.</a> 
+                        That's how many counties exist in the United States
+                        + D.C.
+                        </p>
+                        <p>
+                        Here's the game: Every day, there is a mystery county (equivalent to "parishes" in 
+                        Louisiana and "boroughs" in Alaska) within each U.S. state. Input the name of any state, 
+                        then guess the mystery county/parish/borough in as few guesses as possible.
+                        </p>
+                        <p>
+                        First, each state you guess will appear on a map of the U.S. Its color indicates
+                        how close it is to the answer; the <b style="color:red";>hotter</b> the color,
+                        the closer you are. A <b style="color:green";>green</b> outline means you've
+                        guessed correctly! This process repeats at the state-wide level for counties/parishes/boroughs.
+                        </p>
+                        <p>
+                        The number of times you can play each day is determined by your streak.
+                        </p>
+                         <button id="close">❌</button>  
+                        </div>

@@ -11,90 +11,48 @@
         <link rel="icon" type="image" href="./src/assets/favicon.ico">
     </head>
     <body>
+        <noscript>
+            You need to enable Javascript to use this app.
+        </noscript>
+        <div id="root"></div>
         <section class="header">
-        <div class="navbar">
-                <nav>
-                    <div class="upperhold">
-                        <div class="upperholdcontent1"><h1><a class="wordmark" href="index.html" title="3143 game (refresh)">3 1 4 3</a></h1></div>
-                        <div class="upperholdbuttons">
-                            <div class="upperholdcontent2"><button id="statsb" title="Player stats">
-                            </button></div>
-                            <div class="upperholdcontent3">
-                                <button id="upperqb" title="How to play">
-                                    <span id="playing"></span>
-                                </button>
-                            </div>
-                        </div>
+            <nav>
+                <div class="navelements">
+                    <div class="navcontent1">
+                        <h1><a class="wordmark" href="index.html" title="3143 game (refresh)">3 1 4 3</a></h1>
                     </div>
-                <hr id="tophr">
+                    <div class="navbuttons">
+                        <button id="statsbutton" title="Player stats"></button>
+                        <button id="how2playbutton" title="How to play"></button>
+                    </div>
+                </div>
+                <hr id="navbarline">
                 <div class="modal-container" id="modal_container">
-                    <div class="modal">
-                        <h2>About</h2>
-                        <p>
-                        <a href="https://en.wikipedia.org/wiki/List_of_United_States_counties_and_county_equivalents">3143.</a> 
-                        That's how many counties exist in the United States
-                        + D.C.
-                        </p>
-                        <p>
-                        Here's the game: Every day, there is a mystery county (equivalent to "parishes" in 
-                        Louisiana and "boroughs" in Alaska) within each U.S. state. Input the name of any state, 
-                        then guess the mystery county/parish/borough in as few guesses as possible.
-                        </p>
-                        <p>
-                        First, each state you guess will appear on a map of the U.S. Its color indicates
-                        how close it is to the answer; the <b style="color:red";>hotter</b> the color,
-                        the closer you are. A <b style="color:green";>green</b> outline means you've
-                        guessed correctly! This process repeats at the state-wide level for counties/parishes/boroughs.
-                        </p>
-                        <p>
-                        The number of times you can play each day is determined by your streak.
-                        </p>
-                         <button id="close">❌</button>  
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
+                    
+                </div>
+            </nav>
         </section>
         <section class="hero">
-                <div id="flexwrapper"> 
-                <div id="maincont">
-                    <form id="inputitems">
-                        <div id="inputform1"><label id="guesslabel">Name of state:</label>
-                        <input id="guessinp" type="text" autocomplete="off" autofocus title="Input box">
-                        <span style="display:inline-block;" class="border"></span></div>
-
-                        <div id="guessitflex">
-                            <button class="pushable" id="guessit" title="Play button">
-                                <span class="shadow"></span>
-                                <span class="edge"></span>
-                                <span class="front">
-                                    <span>
-                                        <div class="triangle">▶</div>
-                                    </span>
-                                </span>
-                            </button>
-                    </form>
-                        
-                        </div>
-                    
-                    </div>
-
-                    <div><p id="status">Name any <b id="stage" title="Stage">U.S. state</b> to begin.</p></div>
-                </div>
-
+            <div id="inputitemswrapper">
+                <span id="inputitems">
+                    <input id="guessinp" type="text" autocomplete="off" autofocus title="Input box" placeholder="Your guess...">
+                    <span style="display:inline-block;" class="border"></span>
+                    <button id="playbutton" title="Play button"></button>
+                </span>
+            </div>
+            <div>
+                <p id="status">Name or click any <b id="stage" title="Stage">U.S. state</b> to begin.</p>
+            </div>
+            <div id="maingame"></div>
         </section>
         <section class="footer">
-            <div class="container1">
-                    <p class="subhead"><a href="https://github.com/Aufsteyegen" id="gith2">
-                        <img src="./src/assets/gitlogo.png" alt="Aufsteyegen's GitHub" id="gith" title="My Github"></a> 
-                     <b>|</b> Inspired by:
-                     <a href="https://globle-game.com/game" id="globlel">
-                    <img src="./src/assets/apple-touch-icon.png" id="globle" title="Inspired by the game Globle"></a>
-                    
-                    </a></p>
-                </ul>
-            </div>
+            <p class="subhead"><a href="https://github.com/Aufsteyegen" id="gith2">
+                <img src="./src/assets/gitlogo.png" alt="Aufsteyegen's GitHub" id="gith" title="My Github"></a> 
+                <b>|</b> Inspired by:
+                <a href="https://globle-game.com/game" id="globlel">
+                <img src="./src/assets/apple-touch-icon.png" id="globle" title="Inspired by the game Globle"></a>
+                </a>
+            </p>
         </section>
     <script src="./src/index.js" type="module"></script>
     </body>
