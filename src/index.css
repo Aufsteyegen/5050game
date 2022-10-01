@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+body, button {
+    background: #cee7ff;
+    margin: 0;
+    font-family: 'IBM Plex Sans Condensed';
+    color: rgb(0, 0, 0);
+}
+
+h1, h2, h3 {
+  font-family: 'IBM Plex Mono';
+  margin: 0;
+}
+
+p { cursor: default; }
+
+.header {
+  width: 100%;
+  background-color:rgba(255, 255, 255, 0.424);
+  position: relative;
+}
+
+ol {
+  padding-left: 0.8em;
+}
+
+.Inner {
+  display: grid;
+  cursor: default;
+  margin-right: 0;
+  padding: 0.3em;
+  font-size: 0.8em;
+}
+
+.style1 {
+  opacity: 1;
+}
+
+.style2 {
+  opacity: 0;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.show-me {
+  opacity: 1;
+}
+
+
+.modalcontainer {
+  position: absolute; 
+  left: 0; 
+  right: 0;
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 40%;
+  z-index: 4;
+  pointer-events: none;
+  margin-top: 5.5em;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+p { 
+  padding-right: 1em;
+padding-left: 1em; }
+
+#how2playbuttoncontent {
+  width: 35%;
+  border: 2px solid rgb(0, 115, 255);
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  pointer-events: auto;
+  text-align: center;
+  border-radius: 15px;
+  padding: 1em;
+  padding-top: 0.6em;
+  background: #cee7ffe1;
+}
+
+.subhead { margin: 0em; padding-top: 1em; }
+
+.navelements {
+  display: flex;
+  width: 100%;
+  text-align: left;
+  margin: auto;
+  margin-left: 0;
+}
+
+#belowstatuhr {
+  width: 100%;
+  margin-bottom: 0.3em;
+  margin-top: 0.3em;
+  border: 0.5px solid rgb(0, 115, 255);
+}
+
+img {
+  vertical-align: middle;
+}
+
+.mapbutton, .mapwins {
+  font-size: 0.7em;
+  line-height: 1em;
+  margin-top: 0.4em;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px #00000094;
+  color:rgb(255, 255, 255);
+}
+
+#statsbutton {
+  background: none;
+  transition: box-shadow .2s;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 3em;
+  width: 3em;
+  cursor: pointer;
+  border-radius: 15px;
+  margin-right: 1em;
+  border-color: transparent;
+  pointer-events: auto;
+  margin-left: auto;
+}
+
+#maingame {
+  height: 43.5em;
+  width: 100%;
+  margin-right: auto;
+  pointer-events: auto;
+  position: fixed;
+  z-index: 1;
+}
+
+.canvas {
+  pointer-events: none;
+  position: fixed !important;
+  top: 0px;
+  left: 0px;
+}
+
+#navbarline {
+  width: 100%;
+  border: 1px solid rgb(0, 115, 255);
+  margin: 0.3em;
+  margin-bottom: 0;
+  background:rgb(0, 115, 255);
+  margin-left: auto;
+  margin-top: 0;
+}
+
+#modalline {
+  width: 20%;
+  background:rgb(0, 115, 255);
+  border: 1px solid rgb(0, 115, 255);
+}
+
+#wordmark {
+  text-align: center;
+  align-items: center;
+  background: none;
+  border: none;
+  padding-left: 0;
+  font-size: 2.5em;
+  color: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+#status1 {
+  font-family: 'IBM Plex Sans Condensed';
+  width: 10em;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+  justify-content: center;
+  margin-top: 1em;
+  display: flex;
+  text-shadow: 1px 1px 3px #0000005c;
+  font-size: 2em;
+  -webkit-animation: 2.5s ease 0s normal forwards 1 fadeIn;
+  animation: 2.5s ease 0s normal forwards 1 fadeIn;
+  text-align: center;
+  color: white;
+}
+
+#status2 {
+  font-family: 'IBM Plex Sans Condensed';
+  margin-left: auto;
+  -webkit-animation: 2.5s ease 0s normal forwards 1 fadeIn;
+  animation: 2.5s ease 0s normal forwards 1 fadeIn;
+  width: 5em;
+  margin-right: auto;
+  margin-bottom: 0.2em;
+  font-weight: bold;
+  justify-content: center;
+  display: flex;
+  font-size: 1em;
+  text-align: center;
+  color: rgb(0, 115, 255);
+  border-radius: 15px;
+  background: #ddefff;
+  margin-bottom: 0.2em;
+  border-bottom: 1px solid rgb(0, 115, 255);
+}
+
+#status3 {
+  font-family: 'IBM Plex Sans Condensed';
+  color: rgb(0, 115, 255);
+  display: flex;
+  background-color:#ddefff;
+  border: 1px solid rgb(0, 115, 255);
+  align-items: center;
+  text-shadow: 1px 1px 3px #8181815c;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 11.5em;
+  pointer-events: none;
+  font-size: 2em;
+  padding: 0.25em;
+  height: 1em;
+  font-weight: bold;
+  justify-content: center;
+}
+
+#timer {
+  font-family: 'IBM Plex Sans Condensed';
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  
+  pointer-events: none;
+  justify-content: center;
+  font-weight: bold;
+}
+
+@keyframes fadeIn{
+  0% { opacity:0; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+
+@-webkit-keyframes fadeIn{
+  0% { opacity:0; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+
+#flexwrapper {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.hero {
+  pointer-events: auto;
+  margin-bottom: 0;
+}
+
+.footer {
+  text-align: center;
+  height: 4em;
+  position: fixed;
+  background-color:rgba(255, 255, 255, 0.424);
+  z-index: 6;
+}
+
+nav {
+  background: none;
+  justify-content: center;
+  display: inline-flexbox;
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+  pointer-events: auto;
+}
+
+#how2playbutton {
+  background: none;
+  height: 3em;
+  width: 3em;
+  cursor: pointer;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 15px;
+  margin-right: 0em;
+  border-color: transparent;
+  pointer-events: auto;
+}
+
+#globlelogo1 {
+  height: 20px;
+  width: 20px;
+  margin: 5px;
+}
+
+.closebutton1 {
+  position: absolute; 
+  display: flex;
+  border-radius: 100px;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.separator {
+  background-color: #000000e1;
+  height: 0.03em;
+  width: 30%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.closebutton2 {
+  margin-right: auto;
+  height: 2em;
+  width: 2em;
+  color: red;
+  font-weight: bold;
+  border-width: 1px;
+  border-color: rgb(0, 115, 255);
+  background-color: white;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.modaltitle {
+  margin: 0em;
+  cursor: default;
+}
+
+.modaltxtbackground {
+  background:#e6f3ff;
+  border-radius: 15px;
+  border: 1px solid rgb(0, 115, 255);
+}
+
+#globlelogo2 {
+  height: 20px;
+  width: 20px;
+}
+
+#githublogo1 {
+  height: 20px;
+  width: 20px;
+  margin: 5px;
+}
+
+#githublogo2 {
+  height: 20px;
+  width: 20px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
