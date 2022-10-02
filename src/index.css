@@ -14,8 +14,6 @@ h1, h2, h3 {
   margin: 0;
 }
 
-p { cursor: default; }
-
 .header {
   width: 100%;
   top: 0;
@@ -48,24 +46,6 @@ ol {
   font-size: 0.8em;
 }
 
-.style1 {
-  opacity: 1;
-}
-
-.style2 {
-  opacity: 0;
-}
-
-.hidden {
-  opacity: 0;
-  transition: opacity 0.5s ease-in;
-}
-
-.show-me {
-  opacity: 1;
-}
-
-
 .modalcontainer {
   position: absolute; 
   left: 0; 
@@ -77,10 +57,6 @@ ol {
   pointer-events: none;
   margin-top: 5.5em;
 }
-
-p { 
-  padding-right: 1em;
-padding-left: 1em; }
 
 #how2playbuttoncontent {
   width: 35%;
@@ -110,7 +86,6 @@ padding-left: 1em; }
   background: #cee7ffe1;
 }
     
-
 .subhead { margin: 0em; padding-top: 1em; }
 
 .navelements {
@@ -121,18 +96,11 @@ padding-left: 1em; }
   margin-left: 0;
 }
 
-#belowstatuhr {
-  width: 100%;
-  margin-bottom: 0.3em;
-  margin-top: 0.3em;
-  border: 0.5px solid rgb(0, 115, 255);
-}
-
 img {
   vertical-align: middle;
 }
 
-.mapbutton, .mapwins {
+.mapbutton {
   font-size: 0.7em;
   line-height: 1em;
   margin-top: 0.4em;
@@ -142,8 +110,6 @@ img {
 }
 
 #statsbutton {
-  background: none;
-  transition: box-shadow .2s;
   margin-top: auto;
   margin-bottom: auto;
   height: 3em;
@@ -151,7 +117,6 @@ img {
   cursor: pointer;
   border-radius: 15px;
   margin-right: 1em;
-  border-color: transparent;
   pointer-events: auto;
   margin-left: auto;
 }
@@ -253,7 +218,6 @@ img {
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  
   pointer-events: none;
   justify-content: center;
   font-weight: bold;
@@ -319,12 +283,6 @@ nav {
   pointer-events: auto;
 }
 
-#globlelogo1 {
-  height: 20px;
-  width: 20px;
-  margin: 5px;
-}
-
 .closebutton1 {
   position: absolute; 
   display: flex;
@@ -363,11 +321,6 @@ nav {
   background:#e6f3ff;
   border-radius: 15px;
   border: 1px solid rgb(0, 115, 255);
-}
-
-#globlelogo2 {
-  height: 20px;
-  width: 20px;
 }
 
 #githublogo1 {
