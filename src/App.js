@@ -1,13 +1,11 @@
 import './App.css'
 import './index.css'
-import { useRef, Suspense, useState } from 'react'
+import { useRef, Suspense  } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { View, Float, Center, Environment, Html } from '@react-three/drei'
+import { View, Float, Center, Environment } from '@react-three/drei'
 import { Statsicon, Qmarkicon, Wordmark } from './animatedbuttons.js'
 import { StatsMap } from './States/statsmap.js'
 import Button from '@mui/material/Button';
-
-var change
 
 function App() {
   const view1 = useRef()
@@ -15,11 +13,16 @@ function App() {
   const view3 = useRef()
   const view4 = useRef()
   const ref = useRef()
-  const time = new Date()
-  const [open, setOpen] = useState(false)
-  function clicked() {
-    setOpen((prev) => !prev)
+  const how2play = useRef()
+  const stats = useRef()
+  function modalVisibility (props) {
+    if (props.current.style.visibility === "hidden") {
+      props.current.style.visibility = "visible"
+    } else {
+      props.current.style.visibility = "hidden";
+    }
   }
+  const time = new Date()
   return (
   <>
   <div ref={ref} className="container">
@@ -29,19 +32,20 @@ function App() {
             <a href="../public/index.html">
             <button id="wordmark" title="5 0 5 0 game (refresh)" ref={ view3 }>
                 <h1>5 0 5 0</h1></button></a>
-            <Button id="statsbutton" title="Player stats" ref={ view1 } />
+            <Button id="statsbutton" title="Player stats" ref={ view1 } 
+            onClick={() => modalVisibility(stats)}/>
             <Button id="how2playbutton" title="How to play" ref={ view2 }  
-             onClick={clicked}/>
+            onClick={() => modalVisibility(how2play)} />
           </div>
-          <hr id="navbarline" />
         </nav>
       </section>
       <section className="hero" > 
-    <div className="modalcontainer" style={{ opacity : open ? 1 : 0 }}>
-        <span id="how2playbuttoncontent" 
-        style={{pointerEvents : open ? 'auto' : 'none'}}>
+    <div className="modalcontainer">
+        <span id="how2playbuttoncontent" ref = { how2play }
+        style={{visibility: "hidden"}}>
               <span className="closebutton1"><button  className="closebutton2" 
-              title="Close" onClick={ clicked }>X</button></span>
+              title="Close" 
+              onClick={() => modalVisibility(how2play)}>X</button></span>
               <h3 className="modaltitle">How to play</h3>
               <hr id="modalline"></hr>
               <div className="modaltxtbackground">
@@ -65,12 +69,36 @@ function App() {
               </div>
         </span>
     </div>
+    <div className="modalcontainer">
+        <span id="statsbuttoncontent" ref = { stats }
+        style={{visibility: "hidden"}}>
+              <span className="closebutton1"><button  className="closebutton2" 
+              title="Close" onClick={() => modalVisibility(stats)}
+              >X</button></span>
+              <h3 className="modaltitle">Your stats</h3>
+              <hr id="modalline"></hr>
+              <div className="modaltxtbackground">
+              <div className="Inner">Updates on page refresh!</div>
+              <div className="Inner"><b>Total plays:</b><span>
+               {JSON.parse(localStorage.getItem('plays'))}</span></div>
+              <div className="separator"></div>
+              <div className="Inner"><b>Total correct guesses:</b><span> 
+              {JSON.parse(localStorage.getItem('guesses'))}</span>
+              out of
+              <span>{50 * JSON.parse(localStorage.getItem('plays'))}</span></div>
+              <div className="separator"></div>
+              <div className="Inner"><b>Total wins:</b>
+                <span>{JSON.parse(localStorage.getItem('curwins'))}
+                </span> </div>
+              
+              </div>
+        </span>
+    </div>
       </section>
       <section>
         <div id="maingame" ref={ view4 } />
       </section>  
       <section className="footer">
-      <hr id="navbarline" />
         <p className="subhead"> A project by:
           <a href="https://github.com/Aufsteyegen" id="githublogo1">
             <img src={require("./gith.png")} alt="Aufsteyegen's GitHub" id="githublogo2" title="My Github" />

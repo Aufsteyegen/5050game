@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useGLTF, Html, Float  } from "@react-three/drei"
-import { HtmlUpdate } from "./statsmapdata.js"
+import { HtmlUpdate, useStickyState } from "./statsmapdata.js"
 import { useSpring } from "@react-spring/core"
 import { ShuffleArray, statenames, statehood, scales } from './playlogic.js'
 import { useTimer } from 'react-timer-hook'
@@ -8,11 +8,16 @@ import { a } from "@react-spring/three"
 import '../App.css'
 import '../index.css'
 
+var wonTime = 0
 var wins = ShuffleArray(statenames)
 const reset = true
 
 function StatsMap({ expiryTimestamp }) {
   const { nodes } = useGLTF("/all.glb")
+  const [plays, setPlays] = useStickyState(0, "plays")
+  const [guess, setGuess] = useStickyState(0, "guesses")
+  const [curwins, setCurWins] = useStickyState(0, "curwins")
+  const [won, setWon] = useState(false)
   const { seconds, start, restart, pause } = useTimer({ 
     autoStart : false,
     expiryTimestamp, 
@@ -29,12 +34,24 @@ function StatsMap({ expiryTimestamp }) {
   const bounce = useSpring({
     config: { mass: 3, tension: 2000, friction: 300, precision: 0.0001 },
     z: show ? -8.27 : -8.66})
-  useEffect(() => {
-      document.body.style.cursor = hovered ? 'pointer' : 'auto'
-  }, [hovered])
+    useEffect(() => {
+        document.body.style.cursor = playing ? 'pointer' : 'auto'
+      }, [playing])
   useEffect(()=> {
     wins = playing ? wins : ShuffleArray(statenames)
-  },[playing]) 
+  },[playing])
+  useEffect(()=> {
+    if (score === 50){
+        setCurWins(t => t+1)
+        pause()
+        wonTime = seconds 
+        setShow(true) 
+        setPlaying(false)
+        setWon(true)
+        statenames.forEach(key => scales[key] = reset)
+      }
+    }, [score])
+
   function PlayButton(props) {
     const { nodes } = useGLTF("/playbutton10.glb")
     return (
@@ -45,7 +62,8 @@ function StatsMap({ expiryTimestamp }) {
             e.object.material.color.set('#cee7ff')]}
           onPointerOut={(e) => [setHovered(false), 
             e.object.material.color.set('grey')]}
-          onClick={() => [setShow(false), setPlaying(true), setScore(0)]}
+          onClick={() => [setShow(false), setPlaying(true), setScore(0),
+        setPlays(plays + 1), setWon(false)]}
           position={[0, 23.5, -7]}
           scale={smaller.x}
           rotation={[0, 3 * Math.PI / 2, -Math.PI / 2]}>
@@ -72,6 +90,17 @@ function StatsMap({ expiryTimestamp }) {
             envMapIntensity={1} />
       </a.mesh>
 
+      <mesh
+        position={[0, 15, -8]}>
+            <boxGeometry args={[0, 0, 0]} />
+            opacity={1}
+            <Html center style={{visibility : won ? 'visible' : 'hidden'}}>
+                <div className="winNotif">
+                <div>WINNER!</div>
+                <div>In time: {50 - wonTime} seconds</div>
+                </div> </Html>
+        </mesh>
+
       <a.mesh
         onClick={seconds > 49 ? start : () => {
           const time = new Date();
@@ -89,15 +118,20 @@ function StatsMap({ expiryTimestamp }) {
       <mesh scale={1} position={[0, 26.4, -8.20]}>
         <boxGeometry args={[0, 0, 0]} />
         <Html center style={{pointerEvents: 'none'}}>
-          <div id="status1" >{ show ? 'Ready to play?' : 'Click a state!' }</div>
+          <div id="status1" >
+            {score ===  '—' ? 'Ready to play?' : 
+            show ? 'Play again?' : 'Click a state!' }</div>
           <span id="status2">Score: {score}</span>
           <div id="status3" style={{visibility : show ? 'hidden' : 'visible'}}>
-            { show ? '' : score === 50 ? 'WINNER!' : 'Statehood since ' } 
+            { show ? '' : 'Statehood since ' } 
             { show ? '' : statehood[wins[score]] }</div>
           <div id="timer">
-            <span style={{visibility : show ? 'hidden' : 'visible'}}>
-            { seconds === 0 ? "Time's up!" : seconds } 
-            { seconds === 0 ? '' : ' second(s) left!' }</span>
+            <span style={{
+                visibility : show ? 'hidden' : 'visible',
+                color : seconds <= 15 ? 'red' : 'black'}}>
+            { seconds } 
+            { seconds === 1 ? ' second left!' : 
+            seconds === 0 ? '' : ' seconds left!' }</span>
         </div>
         </Html>
       </mesh>
@@ -111,7 +145,8 @@ function StatsMap({ expiryTimestamp }) {
         onPointerDown={(e) => [e.stopPropagation(), e.object.position.setZ(-8)]}
         onClick={e => {if (e.object.name === wins[score]) 
           {scales[e.object.name] = false
-          setScore(score + 1)} 
+          setScore(score + 1)
+        setGuess(guess + 1)} 
           else {e.object.material.color.set('red')}}}
         onPointerUp={(e) => e.object.position.setZ(-8.22)}>
         
