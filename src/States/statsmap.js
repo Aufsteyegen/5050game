@@ -99,7 +99,7 @@ function StatsMap({ expiryTimestamp }) {
             <div>In time: {50 - wonTime} seconds</div>
             </div> 
             </Html>
-        </mesh>
+       </mesh>
 
       <a.mesh
         onClick={seconds > 49 ? start : () => {
