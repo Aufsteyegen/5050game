@@ -1,6 +1,9 @@
 50 states, 50 seconds. Challenge your U.S. geography knowledge.
 
 Play at: https://5050-game.com/public/index.html 
+
+TODO: 
+-Add mobile-friendly sizing
 R3F
 
 How to play:
