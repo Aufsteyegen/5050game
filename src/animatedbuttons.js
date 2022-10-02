@@ -14,7 +14,7 @@ function ButtonBox() {
 }
 
 function Statsicon(props) {
-    const { nodes, materials } = useGLTF("/statsiconfinal5.glb")
+    const { nodes } = useGLTF("/statsiconfinal5.glb")
     const ref = useRef()
     const [hovered, hover] = useState(false)
     const [clicked, click] = useState(false)

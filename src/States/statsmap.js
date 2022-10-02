@@ -50,7 +50,7 @@ function StatsMap({ expiryTimestamp }) {
         setWon(true)
         statenames.forEach(key => scales[key] = reset)
       }
-    }, [score])
+    }, [score, seconds, setCurWins, pause])
 
   function PlayButton(props) {
     const { nodes } = useGLTF("/playbutton10.glb")
