@@ -11,7 +11,7 @@ function HtmlUpdate (props) {
     pointerEvents : 'none' }}>
         <span className="tooltip">
         <div>
-          <div className="mapbutton"> {props.name} <br />  </div>
+          <div className="mapbutton">{props.name}<br /></div>
         </div>
         </span>
     </Html>

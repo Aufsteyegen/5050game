@@ -13,12 +13,12 @@ var wins = ShuffleArray(statenames)
 const reset = true
 
 function StatsMap({ expiryTimestamp }) {
-  const { nodes } = useGLTF("/all.glb")
+  const {nodes} = useGLTF("/all.glb")
   const [plays, setPlays] = useStickyState(0, "plays")
   const [guess, setGuess] = useStickyState(0, "guesses")
   const [curwins, setCurWins] = useStickyState(0, "curwins")
   const [won, setWon] = useState(false)
-  const { seconds, start, restart, pause } = useTimer({ 
+  const {seconds, start, restart, pause} = useTimer({ 
     autoStart : false,
     expiryTimestamp, 
     onExpire: () => [setShow(true), setPlaying(false), 
@@ -53,7 +53,7 @@ function StatsMap({ expiryTimestamp }) {
     }, [score, seconds, setCurWins, pause])
 
   function PlayButton(props) {
-    const { nodes } = useGLTF("/playbutton10.glb")
+    const {nodes} = useGLTF("/playbutton10.glb")
     return (
         <a.mesh
           geometry={nodes.Circle.geometry}
@@ -92,13 +92,13 @@ function StatsMap({ expiryTimestamp }) {
 
       <mesh
         position={[0, 15, -8]}>
-            <boxGeometry args={[0, 0, 0]} />
-            opacity={1}
-            <Html center style={{visibility : won ? 'visible' : 'hidden'}}>
-                <div className="winNotif">
-                <div>WINNER!</div>
-                <div>In time: {50 - wonTime} seconds</div>
-                </div> </Html>
+        <boxGeometry args={[0, 0, 0]} />
+        <Html center style={{visibility : won ? 'visible' : 'hidden'}}>
+            <div className="winNotif">
+            <div>WINNER!</div>
+            <div>In time: {50 - wonTime} seconds</div>
+            </div> 
+            </Html>
         </mesh>
 
       <a.mesh

@@ -71,7 +71,7 @@ function App() {
     </div>
     <div className="modalcontainer">
         <span id="statsbuttoncontent" ref = { stats }
-        style={{visibility: "hidden"}}>
+            style={{visibility: "hidden"}}>
               <span className="closebutton1"><button  className="closebutton2" 
               title="Close" onClick={() => modalVisibility(stats)}
               >X</button></span>
