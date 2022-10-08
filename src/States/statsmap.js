@@ -16,7 +16,7 @@ function StatsMap({ expiryTimestamp }) {
   const {nodes} = useGLTF("/all.glb")
   const [plays, setPlays] = useStickyState(0, "plays")
   const [guess, setGuess] = useStickyState(0, "guesses")
-  const [curwins, setCurWins] = useStickyState(0, "curwins")
+  const [, setCurWins] = useStickyState(0, "curwins")
   const [won, setWon] = useState(false)
   const {seconds, start, restart, pause} = useTimer({ 
     autoStart : false,
@@ -24,7 +24,7 @@ function StatsMap({ expiryTimestamp }) {
     onExpire: () => [setShow(true), setPlaying(false), 
         statenames.forEach(key => scales[key] = reset)]})
   const [scale] = useState(scales)
-  const [hovered, setHovered] = useState(false)
+  const [, setHovered] = useState(false)
   const [show, setShow] = useState(true)
   const [score, setScore] = useState('—')
   const [playing, setPlaying] = useState(false)
@@ -67,7 +67,7 @@ function StatsMap({ expiryTimestamp }) {
           scale={smaller.x}
           rotation={[0, 3 * Math.PI / 2, -Math.PI / 2]}>
           <meshStandardMaterial roughness={0.17} metalness={1} 
-          color={'rgb(0, 115, 255)'}  />
+          color={'rgb(0, 115, 255)'} />
         </a.mesh>)}
     return (
     <>
