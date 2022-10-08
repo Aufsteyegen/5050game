@@ -99,10 +99,13 @@ function App() {
         <div id="maingame" ref={ view4 } />
       </section>  
       <section className="footer">
-        <p className="subhead"> A project by:
+      <p id="version">V1.0</p>
+        <p> A project by:
           <a href="https://github.com/Aufsteyegen" id="githublogo1">
-            <img src={require("./gith.png")} alt="Aufsteyegen's GitHub" id="githublogo2" title="My Github" />
+            <img src={require("./gith.png")} alt="Aufsteyegen's GitHub" 
+            id="githublogo2" title="My Github" />
           </a> 
+          
         </p>
       </section>
     </div>

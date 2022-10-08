@@ -252,12 +252,20 @@ a {
 
 .footer {
   text-align: center;
-  height: 3em;
   width: 100%;
   position: fixed;
   background-color:none;
-  z-index: 6;
   bottom: 0;
+  margin-top: 0;
+}
+
+#version {
+    border-bottom: 1px dotted #000;
+    width: 2em;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 nav {
