@@ -1,12 +1,9 @@
+# What is this?
 50 states, 50 seconds. Challenge your U.S. geography knowledge.
 
-Play at: https://5050-game.com/public/index.html 
+**Play here**: https://5050-game.com/public/index.html 
 
-TODO: 
--Add mobile-friendly sizing
-R3F
-
-How to play:
+# How to play
 
 Guess the year of statehood for 50 states in 50 seconds!
 Incorrect guesses will flicker red. Correct guesses will disappear into the ether.</div>
@@ -20,3 +17,10 @@ For this game, "statehood" is either:
 
 (It is not when (if) a state ratified the Articles of Confederation,
 nor re-admittance to the Union after the Civil War.)
+
+
+# TODO: 
+- Add mobile-friendly sizing
+- Use database to store user stats
+- Clean up syntax across the board 
+
