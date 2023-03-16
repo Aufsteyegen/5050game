@@ -1,5 +1,5 @@
 # What is this?
-50 states, 50 seconds. Challenge your U.S. geography knowledge.
+My first-ever web game project. Uses React, R3F. Deployed via Firebase.
 
 **Play here**: https://5050-game.com/public/index.html 
 
