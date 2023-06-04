@@ -21,9 +21,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "webpack-dev-server --history-api-fallback && react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "reacft-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -45,6 +45,26 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0"
+    "@babel/compat-data": "7.19.4",
+    "@babel/core": "7.20.2",
+    "@babel/generator": "7.19.6",
+    "@babel/helper-compilation-targets": "7.20.2",
+    "@babel/helper-create-class-features-plugin": "7.19.0",
+    "@babel/helper-module-transforms": "7.20.2",
+    "@babel/preset-react": "^7.22.3",
+    "gh-pages": "^4.0.0",
+    "webpack": "^5.85.0",
+    "webpack-cli": "^5.1.2"
+  },
+  "description": "My first-ever web game project. Uses React, R3F. Deployed via Firebase.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aufsteyegen/5050game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aufsteyegen/5050game/issues"
   }
 }

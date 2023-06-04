@@ -1,33 +1,33 @@
-import React, { useState, useEffect } from "react"
-import { useGLTF, Html, Float  } from "@react-three/drei"
-import { HtmlUpdate, useStickyState } from "./statsmapdata.js"
-import { useSpring } from "@react-spring/core"
-import { ShuffleArray, statenames, statehood, scales } from './playlogic.js'
-import { useTimer } from 'react-timer-hook'
-import { a } from "@react-spring/three"
-import '../App.css'
-import '../index.css'
+import React, { useState, useEffect } from "react";
+import { useGLTF, Html, Float } from "@react-three/drei";
+import { HtmlUpdate, useStickyState } from "./statsmapdata.js";
+import { useSpring } from "@react-spring/core";
+import { ShuffleArray, statenames, statehood, scales } from './playlogic.js';
+import { useTimer } from 'react-timer-hook';
+import { a } from "@react-spring/three";
+import '../App.css';
+import '../index.css';
 
 var wonTime = 0
 var wins = ShuffleArray(statenames)
 const reset = true
 
 function StatsMap({ expiryTimestamp }) {
-  const {nodes} = useGLTF("/all.glb")
-  const [plays, setPlays] = useStickyState(0, "plays")
-  const [guess, setGuess] = useStickyState(0, "guesses")
-  const [, setCurWins] = useStickyState(0, "curwins")
-  const [won, setWon] = useState(false)
-  const {seconds, start, restart, pause} = useTimer({ 
-    autoStart : false,
-    expiryTimestamp, 
-    onExpire: () => [setShow(true), setPlaying(false), 
-        statenames.forEach(key => scales[key] = reset)]})
-  const [scale] = useState(scales)
-  const [, setHovered] = useState(false)
-  const [show, setShow] = useState(true)
-  const [score, setScore] = useState('—')
-  const [playing, setPlaying] = useState(false)
+  const { nodes } = useGLTF("/all.glb");
+  const [plays, setPlays] = useStickyState(0, "plays");
+  const [guess, setGuess] = useStickyState(0, "guesses");
+  const [, setCurWins] = useStickyState(0, "curwins");
+  const [won, setWon] = useState(false);
+  const { seconds, start, restart, pause } = useTimer({
+      autoStart: false,
+      expiryTimestamp,
+      onExpire: () => [setShow(true), setPlaying(false), statenames.forEach(key => scales[key] = reset)]
+    });
+  const [scale] = useState(scales);
+  const [, setHovered] = useState(false);
+  const [show, setShow] = useState(true);
+  const [score, setScore] = useState('—');
+  const [playing, setPlaying] = useState(false);
   const smaller = useSpring({
     config: { mass: 5, tension: 1500, friction: 210, precision: 0.0001 },
     x: show ? 0.3 : 0});

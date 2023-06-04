@@ -1,20 +1,15 @@
-import './App.css'
-import './index.css'
-import { useRef, Suspense  } from 'react'
-import { Canvas } from '@react-three/fiber'
-import { View, Float, Center, Environment } from '@react-three/drei'
-import { Statsicon, Qmarkicon, Wordmark } from './animatedbuttons.js'
-import { StatsMap } from './States/statsmap.js'
+import './App.css';
+import './index.css';
+import React, { useRef, Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { View, Float, Center, Environment } from '@react-three/drei';
+import { Statsicon, Qmarkicon, Wordmark } from './animatedbuttons.js';
+import { StatsMap } from './States/statsmap.js';
 import Button from '@mui/material/Button';
 
 function App() {
-  const view1 = useRef()
-  const view2 = useRef()
-  const view3 = useRef()
-  const view4 = useRef()
-  const ref = useRef()
-  const how2play = useRef()
-  const stats = useRef()
+    const [view1, view2, view3, view4, ref, how2play, stats] = [useRef(), 
+           useRef(), useRef(), useRef(), useRef(), useRef(), useRef()];
   function modalVisibility (props) {
     if (props.current.style.visibility === "hidden") {
       props.current.style.visibility = "visible"
@@ -99,14 +94,11 @@ function App() {
         <div id="maingame" ref={ view4 } />
       </section>  
       <section className="footer">
-      <p id="version">V1.0</p>
-        <p> A project by:
+        V1.1 | A project by:
           <a href="https://github.com/Aufsteyegen" id="githublogo1">
             <img src={require("./gith.png")} alt="Aufsteyegen's GitHub" 
             id="githublogo2" title="My Github" />
           </a> 
-          
-        </p>
       </section>
     </div>
     <div>
