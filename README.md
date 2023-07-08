@@ -1,3 +1,6 @@
+Deprecated. See my new game here: https://github.com/Aufsteyegen/193-game
+
+<s>
 # What is this?
 My first-ever web game project. Uses React, R3F. Deployed via Firebase.
 
@@ -22,5 +25,5 @@ nor re-admittance to the Union after the Civil War.)
 # TODO: 
 - Add mobile-friendly sizing
 - Use database to store user stats
-- Clean up syntax across the board 
-
+- Clean up syntax across the board
+</s>
